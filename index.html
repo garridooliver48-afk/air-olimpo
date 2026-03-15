@@ -24,9 +24,10 @@
             background-color: var(--fondo-oscuro); 
             color: var(--texto-claro);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         
-        /* --- NAVBAR ORIGINAL (RECUPERADA E INTACTA) --- */
+        /* --- NAVBAR ORIGINAL --- */
         .navbar { 
             background-color: var(--azul-olimpo); 
             padding: 12px 30px; 
@@ -64,57 +65,59 @@
         }
 
         .navbar-der { display: flex; align-items: center; gap: 15px; }
-        .btn-portal { text-decoration: none; color: var(--texto-claro); font-weight: 700; font-size: 12px; text-transform: uppercase; display: flex; align-items: center; gap: 5px; }
-        
-        /* LINK ACTUALIZADO A NEW SKY HOME */
         .btn-operaciones { background-color: transparent; color: var(--bronce-oro); padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; border: 1px solid var(--bronce-oro); }
-        
         .relojes-container { background-color: rgba(0, 0, 0, 0.4); color: var(--bronce-oro); display: flex; padding: 8px 12px; border-radius: 4px; border: 1px solid var(--bronce-oro); font-family: 'Orbitron', sans-serif; font-size: 13px; }
 
-        /* --- HERO ORIGINAL --- */
-        .hero { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .video-bg { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(45%); z-index: -1; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 55px; color: var(--bronce-oro); text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-
-        /* --- SECCIONES --- */
+        /* --- ESTRUCTURA --- */
         .pagina { display: none; }
-        .pagina.activa { display: block; animation: fadeIn 0.5s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
+        .pagina.activa { display: block; }
         .seccion-base { padding: 60px 20px; max-width: 1100px; margin: auto; }
         .titulo-seccion { text-align: center; font-family: 'Orbitron', sans-serif; color: var(--bronce-oro); margin-bottom: 40px; }
 
-        /* --- CARDS MÉTRICAS --- */
-        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: rgba(0, 43, 94, 0.4); padding: 40px; border-radius: 15px; border-bottom: 4px solid var(--bronce-oro); text-align: center; }
-        .card i { font-size: 35px; color: var(--bronce-oro); margin-bottom: 15px; }
-        .card h3 { font-size: 30px; margin: 10px 0; color: white; }
-
-        /* --- FLOTA --- */
-        .grid-flota { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card-flota { background: rgba(0, 43, 94, 0.4); padding: 25px; border-radius: 15px; border-bottom: 4px solid var(--bronce-oro); text-align: center; }
-        .card-flota img { width: 100%; max-width: 200px; height: auto; border-radius: 10px; margin: 0 auto 15px; border: 1px solid var(--bronce-oro); display: block; }
-        .card-flota h3 { font-size: 22px; color: white; margin: 10px 0; }
-
-        /* --- STAFF --- */
-        .grid-staff { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; justify-content: flex-start; }
-        .card-staff { background: rgba(0, 43, 94, 0.4); padding: 20px; border-radius: 10px; border-left: 5px solid var(--bronce-oro); text-align: left; max-width: 320px; }
-        .card-staff h3 { margin: 0; color: var(--bronce-oro); font-family: 'Orbitron', sans-serif; font-size: 18px; }
+        /* --- INICIO (SCROLL) --- */
+        .hero { position: relative; height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .video-bg { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(40%); z-index: -1; }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 55px; color: var(--bronce-oro); text-shadow: 0 5px 15px rgba(0,0,0,0.5); margin: 0; }
         
-        .flag-mini { width: 20px; vertical-align: middle; margin-left: 10px; }
+        .seccion-blanca { background: #f8f9fa; color: #333; padding: 80px 20px; text-align: center; }
+        .seccion-oscura { background: var(--fondo-oscuro); color: white; padding: 80px 20px; text-align: center; }
+        
+        .grid-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1200px; margin: auto; }
+        .stat-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-bottom: 4px solid var(--azul-olimpo); }
+        .stat-card h2 { font-size: 35px; color: #222; margin: 0; }
+        .stat-card p { font-size: 11px; color: #666; text-transform: uppercase; margin-top: 5px; font-weight: 700; }
 
-        /* RUTAS - LINK ACTUALIZADO A NEW SKY STEP 2 */
-        .card-ruta { background: rgba(0, 43, 94, 0.4); padding: 30px; border-radius: 15px; border-bottom: 4px solid var(--bronce-oro); text-align: center; }
-        .btn-newsky { background: var(--bronce-oro); color: var(--azul-olimpo); padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 15px; }
+        /* VUELOS LIVE */
+        .flex-vuelos { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; max-width: 1200px; margin: 40px auto; text-align: left; }
+        .vuelos-lista { flex: 2; min-width: 300px; }
+        .vuelos-recientes { flex: 1; min-width: 250px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .card-vuelo-live { background: white; margin-bottom: 15px; padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--azul-olimpo); color: #333; }
+        .status-badge { background: #25d366; color: white; padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; }
 
-        /* TABLA PILOTOS */
+        /* DESTINOS - CONFIGURADOS CON TUS NUEVOS NOMBRES --- */
+        .grid-destinos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
+        .destino-card { position: relative; height: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .destino-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .destino-card:hover img { transform: scale(1.1); }
+        .destino-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); text-align: left; color: white; }
+
+        /* FOOTER / PARTNERS */
+        .footer-olimpo { background: #f8f9fa; padding: 60px 20px; color: #333; text-align: center; border-top: 1px solid #ddd; }
+        .partners-flex { display: flex; justify-content: center; gap: 50px; align-items: center; flex-wrap: wrap; margin-bottom: 40px; }
+        .partners-flex a img { height: 40px; filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
+        .partners-flex a img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+
+        /* --- ESTILOS BASE INTACTOS --- */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: rgba(0, 43, 94, 0.4); padding: 30px; border-radius: 15px; border-bottom: 4px solid var(--bronce-oro); text-align: center; }
+        .card img { width: 100%; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--bronce-oro); }
+        .card-staff { background: rgba(0, 43, 94, 0.4); padding: 20px; border-radius: 10px; border-left: 5px solid var(--bronce-oro); text-align: left; max-width: 320px; }
         .tabla-contenedor { width: 100%; overflow-x: auto; background: rgba(0, 43, 94, 0.2); border-radius: 10px; border: 1px solid rgba(197, 155, 39, 0.2); }
         table { width: 100%; border-collapse: collapse; color: white; }
-        th { background: rgba(197, 155, 39, 0.1); color: var(--bronce-oro); font-family: 'Orbitron', sans-serif; padding: 15px; text-align: left; font-size: 12px; border-bottom: 2px solid var(--bronce-oro); }
+        th { background: rgba(197, 155, 39, 0.1); color: var(--bronce-oro); font-family: 'Orbitron'; padding: 15px; text-align: left; border-bottom: 2px solid var(--bronce-oro); }
         td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        /* WHATSAPP */
-        .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 2000; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 2000; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -122,23 +125,18 @@
     <a href="https://wa.me/50242203923" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <div class="navbar">
-        <div class="navbar-izq">
-            <div class="navbar-logo">AIR OLIMPO</div>
-            <div class="nav-links">
-                <a onclick="cambiarPagina('p-inicio', this)" class="activo">Inicio</a>
-                <a onclick="cambiarPagina('p-flota', this)">Flota</a>
-                <a onclick="cambiarPagina('p-rutas', this)">Rutas</a>
-                <a onclick="cambiarPagina('p-mapa', this)">Mapa</a>
-                <a onclick="cambiarPagina('p-pilotos', this)">Pilotos</a>
-                <a onclick="cambiarPagina('p-staff', this)">Staff</a>
-            </div>
+        <div class="navbar-logo">AIR OLIMPO</div>
+        <div class="nav-links">
+            <a onclick="cambiarPagina('p-inicio', this)" class="activo">Inicio</a>
+            <a onclick="cambiarPagina('p-flota', this)">Flota</a>
+            <a onclick="cambiarPagina('p-rutas', this)">Rutas</a>
+            <a onclick="cambiarPagina('p-mapa', this)">Mapa</a>
+            <a onclick="cambiarPagina('p-pilotos', this)">Pilotos</a>
+            <a onclick="cambiarPagina('p-staff', this)">Staff</a>
         </div>
         <div class="navbar-der">
-            <a href="#" class="btn-portal">Portal <i class="fas fa-sign-in-alt"></i></a>
             <a href="https://newsky.app/home" target="_blank" class="btn-operaciones">Centro de Operaciones</a>
-            <div class="relojes-container">
-                <span id="reloj-zulu">00:00</span> Z | <span id="reloj-local">00:00</span> L
-            </div>
+            <div class="relojes-container"><span id="rz">00:00</span> Z | <span id="rl">00:00</span> L</div>
         </div>
     </div>
 
@@ -147,85 +145,57 @@
             <video autoplay muted loop playsinline class="video-bg"><source src="avion.mp4" type="video/mp4"></video>
             <h1>Excelencia en los <span>Cielos</span></h1>
         </div>
-        <div class="seccion-base">
-            <h2 class="titulo-seccion">Nuestras Operaciones</h2>
-            <div class="grid-cards">
-                <div class="card"><i class="fas fa-plane"></i><h3>1,250</h3><p>Vuelos Totales</p></div>
-                <div class="card"><i class="fas fa-clock"></i><h3>3,420</h3><p>Horas de Vuelo</p></div>
-                <div class="card"><i class="fas fa-users"></i><h3>85</h3><p>Pilotos en Red</p></div>
+        
+        <section class="seccion-blanca">
+            <h2 style="color:var(--azul-olimpo); font-family:'Orbitron'">Nuestras Operaciones</h2>
+            <div class="grid-stats">
+                <div class="stat-card"><h2>420</h2><p>Vuelos Totales</p></div>
+                <div class="stat-card"><h2>28</h2><p>Pilotos Activos</p></div>
+                <div class="stat-card"><h2>3,750</h2><p>Horas Voladas</p></div>
+                <div class="stat-card"><h2>900k</h2><p>Millas Totales</p></div>
             </div>
-        </div>
-    </div>
 
-    <div id="p-flota" class="pagina">
-        <div class="seccion-base">
-            <h2 class="titulo-seccion">Unidades Disponibles</h2>
-            <div class="grid-flota">
-                <div class="card-flota">
-                    <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=400" alt="A320">
-                    <h3>Airbus A320-200</h3>
-                    <p>Comercial</p>
-                </div>
-                <div class="card-flota">
-                    <img src="https://images.unsplash.com/photo-1559160581-4471b4e12e2c?q=80&w=400" alt="R66">
-                    <h3>Robinson R66</h3>
-                    <p>VIP</p>
+            <div class="flex-vuelos">
+                <div class="vuelos-lista">
+                    <h3 style="margin-bottom:20px; color: var(--azul-olimpo);">Vuelos en Curso</h3>
+                    <div class="card-vuelo-live">
+                        <div><strong>AEC101</strong> | Piloto Olimpo</div>
+                        <div class="status-badge">AIRBORNE</div>
+                        <div>MGGT ➔ MMUN</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div id="p-staff" class="pagina">
-        <div class="seccion-base">
-            <h2 class="titulo-seccion">Alto Mando - Staff</h2>
-            <div class="grid-staff">
-                <div class="card-staff">
-                    <h3>Oliver Garrido</h3>
-                    <p>CEO & Fundador | VID: 725181</p>
-                    <p>Guatemala <img src="https://flagcdn.com/w20/gt.png" class="flag-mini"></p>
-                </div>
-                <div class="card-staff" style="opacity: 0.6;">
-                    <h3>Director OPS</h3>
-                    <p>Posición Vacante</p>
-                </div>
+        <section class="seccion-oscura">
+            <h2 style="color:var(--bronce-oro); margin-bottom:40px; font-family:'Orbitron'">Radar Táctico AOL</h2>
+            <iframe src="https://newsky.app/map?search=AOL" style="width:100%; height:500px; border:none; border-radius:15px; filter: invert(90%) hue-rotate(180deg) brightness(0.8);"></iframe>
+        </section>
+
+        <section class="seccion-blanca">
+            <h2 style="color:var(--azul-olimpo); margin-bottom:40px; font-family:'Orbitron'">Destinos Principales</h2>
+            <div class="grid-destinos">
+                <div class="destino-card"><img src="can.jpg" alt="Cancun"><div class="destino-info"><strong>Cancún</strong><br>MMUN</div></div>
+                <div class="destino-card"><img src="newyork.jpg" alt="New York"><div class="destino-info"><strong>New York</strong><br>KJFK</div></div>
+                <div class="destino-card"><img src="costarica.jpg" alt="Costa Rica"><div class="destino-info"><strong>Costa Rica</strong><br>MROC</div></div>
+                <div class="destino-card"><img src="madrid.jpg" alt="Madrid"><div class="destino-info"><strong>Madrid</strong><br>LEMD</div></div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div id="p-pilotos" class="pagina">
-        <div class="seccion-base">
-            <h2 class="titulo-seccion">Manifiesto de Pilotos</h2>
-            <div class="tabla-contenedor">
-                <table>
-                    <thead>
-                        <tr><th>VID</th><th>NOMBRE</th><th>HORAS</th><th>ÚLTIMO VUELO</th><th>ESTADO</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>725181</td><td>Oliver Garrido</td><td>700h 49m</td><td>MGGT - KMIA</td><td>EN TIERRA</td></tr>
-                    </tbody>
-                </table>
+        <footer class="footer-olimpo">
+            <div class="partners-flex">
+                <a href="https://ivao.aero/" target="_blank"><img src="ivao.png" alt="IVAO"></a>
+                <a href="https://vatsim.net/" target="_blank"><img src="vatsim.png" alt="VATSIM"></a>
+                <a href="https://dispatch.simbrief.com/home" target="_blank"><img src="simbrief.png" alt="SimBrief"></a>
             </div>
-        </div>
+        </footer>
     </div>
 
-    <div id="p-rutas" class="pagina">
-        <div class="seccion-base" style="text-align: center;">
-            <h2 class="titulo-seccion">Plan de Vuelo</h2>
-            <div class="card" style="max-width: 500px; margin: auto;">
-                <i class="fas fa-file-alt" style="font-size: 40px; color: var(--bronce-oro); margin-bottom: 15px;"></i>
-                <h3>Reservar Nueva Ruta</h3>
-                <p>Haz clic para ir al despachador de New Sky.</p>
-                <a href="https://newsky.app/pilot/flights/add?step=2" target="_blank" class="btn-newsky">RESERVAR VUELO</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="p-mapa" class="pagina">
-        <div class="seccion-base">
-            <h2 class="titulo-seccion">Radar Táctico Live</h2>
-            <iframe src="https://newsky.app/map" style="width:100%; height:600px; border:1px solid var(--bronce-oro); border-radius:15px; background: #000;"></iframe>
-        </div>
-    </div>
+    <div id="p-flota" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Nuestra Flota</h2><div class="grid-cards"><div class="card"><img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=400"><h3>Airbus A320-200</h3></div><div class="card"><img src="https://images.unsplash.com/photo-1559160581-4471b4e12e2c?q=80&w=400"><h3>Robinson R66</h3></div></div></div></div>
+    <div id="p-rutas" class="pagina"><div class="seccion-base" style="text-align: center;"><h2 class="titulo-seccion">Dispatch</h2><a href="https://newsky.app/pilot/flights/add?step=2" target="_blank" style="background:var(--bronce-oro); color:var(--azul-olimpo); padding:15px 30px; text-decoration:none; font-weight:700; border-radius:5px; font-family:'Orbitron'">RESERVAR VUELO</a></div></div>
+    <div id="p-pilotos" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Roster Oficial</h2><div class="tabla-contenedor"><table><thead><tr><th>VID</th><th>PILOTO</th><th>HORAS</th><th>ESTADO</th></tr></thead><tbody><tr><td>725181</td><td>Oliver Garrido</td><td>700h 49m</td><td>EN TIERRA</td></tr></tbody></table></div></div></div>
+    <div id="p-staff" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Staff</h2><div class="card-staff"><h3>Oliver Garrido</h3><p>CEO & Fundador | VID: 725181</p><p>Guatemala <img src="https://flagcdn.com/w20/gt.png" style="width:20px; vertical-align:middle;"></p></div></div></div>
+    <div id="p-mapa" class="pagina"><div class="seccion-base"><iframe src="https://newsky.app/map?search=AOL" style="width:100%; height:600px; border:1px solid var(--bronce-oro); border-radius:15px;"></iframe></div></div>
 
     <script>
         function cambiarPagina(idPagina, enlace) {
@@ -233,11 +203,12 @@
             document.getElementById(idPagina).classList.add('activa');
             document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('activo'));
             if(enlace) enlace.classList.add('activo');
+            window.scrollTo(0,0);
         }
         function actualizarRelojes() {
             const ahora = new Date();
-            document.getElementById('reloj-zulu').textContent = String(ahora.getUTCHours()).padStart(2, '0') + ':' + String(ahora.getUTCMinutes()).padStart(2, '0');
-            document.getElementById('reloj-local').textContent = String(ahora.getHours()).padStart(2, '0') + ':' + String(ahora.getUTCMinutes()).padStart(2, '0');
+            document.getElementById('rz').textContent = String(ahora.getUTCHours()).padStart(2, '0') + ':' + String(ahora.getUTCMinutes()).padStart(2, '0');
+            document.getElementById('rl').textContent = String(ahora.getHours()).padStart(2, '0') + ':' + String(ahora.getUTCMinutes()).padStart(2, '0');
         }
         setInterval(actualizarRelojes, 1000); actualizarRelojes();
     </script>
