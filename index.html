@@ -27,7 +27,7 @@
             scroll-behavior: smooth;
         }
         
-        /* --- NAVBAR ORIGINAL --- */
+        /* --- NAVBAR --- */
         .navbar { 
             background-color: var(--azul-olimpo); 
             padding: 12px 30px; 
@@ -94,7 +94,7 @@
         .card-vuelo-live { background: white; margin-bottom: 15px; padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--azul-olimpo); color: #333; }
         .status-badge { background: #25d366; color: white; padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; }
 
-        /* DESTINOS */
+        /* DESTINOS (NOMBRES CORREGIDOS SEGÚN TU GITHUB) */
         .grid-destinos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
         .destino-card { position: relative; height: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .destino-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
@@ -107,7 +107,7 @@
         .partners-flex a img { height: 40px; filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
         .partners-flex a img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
-        /* --- ESTILOS BASE INTACTOS --- */
+        /* --- ESTILOS BASE --- */
         .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .card { background: rgba(0, 43, 94, 0.4); padding: 30px; border-radius: 15px; border-bottom: 4px solid var(--bronce-oro); text-align: center; }
         .card img { width: 100%; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--bronce-oro); }
@@ -125,16 +125,14 @@
     <a href="https://wa.me/50242203923" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <div class="navbar">
-        <div class="navbar-izq">
-            <div class="navbar-logo">AIR OLIMPO</div>
-            <div class="nav-links">
-                <a onclick="cambiarPagina('p-inicio', this)" class="activo">Inicio</a>
-                <a onclick="cambiarPagina('p-flota', this)">Flota</a>
-                <a onclick="cambiarPagina('p-rutas', this)">Rutas</a>
-                <a onclick="cambiarPagina('p-mapa', this)">Mapa</a>
-                <a onclick="cambiarPagina('p-pilotos', this)">Pilotos</a>
-                <a onclick="cambiarPagina('p-staff', this)">Staff</a>
-            </div>
+        <div class="navbar-logo">AIR OLIMPO</div>
+        <div class="nav-links">
+            <a onclick="cambiarPagina('p-inicio', this)" class="activo">Inicio</a>
+            <a onclick="cambiarPagina('p-flota', this)">Flota</a>
+            <a onclick="cambiarPagina('p-rutas', this)">Rutas</a>
+            <a onclick="cambiarPagina('p-mapa', this)">Mapa</a>
+            <a onclick="cambiarPagina('p-pilotos', this)">Pilotos</a>
+            <a onclick="cambiarPagina('p-staff', this)">Staff</a>
         </div>
         <div class="navbar-der">
             <a href="https://newsky.app/home" target="_blank" class="btn-operaciones">Centro de Operaciones</a>
@@ -144,7 +142,7 @@
 
     <div id="p-inicio" class="pagina activa">
         <div class="hero">
-            <video autoplay muted loop playsinline class="video-bg"><source src="avion.mp4" type="video/mp4"></video>
+            <video autoplay muted loop playsinline class="video-bg"><source src="avión.mp4" type="video/mp4"></video>
             <h1>Excelencia en los <span>Cielos</span></h1>
         </div>
         
@@ -161,15 +159,15 @@
                 <div class="vuelos-lista">
                     <h3 style="margin-bottom:20px; color: var(--azul-olimpo);">Vuelos en Curso</h3>
                     <div class="card-vuelo-live">
-                        <div><strong>AOL101</strong> | Piloto Olimpo</div>
+                        <div><strong>AEC101</strong> | Piloto Olimpo</div>
                         <div class="status-badge">AIRBORNE</div>
                         <div>MGGT ➔ MMUN</div>
                     </div>
                 </div>
                 <div class="vuelos-recientes">
                     <h3 style="margin-bottom:15px; color: var(--azul-olimpo);">Vuelos Recientes</h3>
-                    <div style="font-size:12px; border-bottom:1px solid #eee; padding:5px 0; color: #333;">AOL26 - Arribó</div>
-                    <div style="font-size:12px; border-bottom:1px solid #eee; padding:5px 0; color: #333;">AOL645 - Arribó</div>
+                    <div style="font-size:12px; border-bottom:1px solid #eee; padding:5px 0; color: #333;">AEC26 - Arribó</div>
+                    <div style="font-size:12px; border-bottom:1px solid #eee; padding:5px 0; color: #333;">AEC645 - Arribó</div>
                 </div>
             </div>
         </section>
@@ -182,25 +180,37 @@
         <section class="seccion-blanca">
             <h2 style="color:var(--azul-olimpo); margin-bottom:40px; font-family:'Orbitron'">Destinos Principales</h2>
             <div class="grid-destinos">
-                <div class="destino-card"><img src="Cancun.JPG" alt="Cancún"><div class="destino-info"><strong>Cancún</strong><br>MMUN</div></div>
-                <div class="destino-card"><img src="new york.JPG" alt="New York"><div class="destino-info"><strong>New York</strong><br>KJFK</div></div>
-                <div class="destino-card"><img src="costa rica.JPG" alt="Costa Rica"><div class="destino-info"><strong>Costa Rica</strong><br>MROC</div></div>
-                <div class="destino-card"><img src="madrid.JPG" alt="Madrid"><div class="destino-info"><strong>Madrid</strong><br>LEMD</div></div>
+                <div class="destino-card">
+                    <img src="Cancún.jpg" alt="Cancún">
+                    <div class="destino-info"><strong>Cancún</strong><br>MMUN</div>
+                </div>
+                <div class="destino-card">
+                    <img src="Nueva York.jpg" alt="New York">
+                    <div class="destino-info"><strong>New York</strong><br>KJFK</div>
+                </div>
+                <div class="destino-card">
+                    <img src="costa rica.jpg" alt="Costa Rica">
+                    <div class="destino-info"><strong>Costa Rica</strong><br>MROC</div>
+                </div>
+                <div class="destino-card">
+                    <img src="madrid.jpg" alt="Madrid">
+                    <div class="destino-info"><strong>Madrid</strong><br>LEMD</div>
+                </div>
             </div>
         </section>
 
         <footer class="footer-olimpo">
             <div class="partners-flex">
-                <a href="https://ivao.aero/" target="_blank"><img src="ivao.PNG" alt="IVAO"></a>
-                <a href="https://vatsim.net/" target="_blank"><img src="vatsim.PNG" alt="VATSIM"></a>
-                <a href="https://dispatch.simbrief.com/home" target="_blank"><img src="simbrief.PNG" alt="SimBrief"></a>
+                <a href="https://ivao.aero/" target="_blank"><img src="ivao.png" alt="IVAO"></a>
+                <a href="https://vatsim.net/" target="_blank"><img src="vatsim.png" alt="VATSIM"></a>
+                <a href="https://dispatch.simbrief.com/home" target="_blank"><img src="simbrief.png" alt="SimBrief"></a>
             </div>
             <p style="font-size:11px; color:#aaa;">© 2026 Air Olimpo Virtual Airline. Todos los derechos reservados.</p>
         </footer>
     </div>
 
     <div id="p-flota" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Nuestra Flota</h2><div class="grid-cards"><div class="card"><img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=400"><h3>Airbus A320-200</h3></div><div class="card"><img src="https://images.unsplash.com/photo-1559160581-4471b4e12e2c?q=80&w=400"><h3>Robinson R66</h3></div></div></div></div>
-    <div id="p-rutas" class="pagina"><div class="seccion-base" style="text-align: center;"><h2 class="titulo-seccion">Rutas</h2><a href="https://newsky.app/pilot/flights/add?step=2" target="_blank" style="background:var(--bronce-oro); color:var(--azul-olimpo); padding:15px 30px; text-decoration:none; font-weight:700; border-radius:5px; font-family:'Orbitron'">RESERVAR VUELO</a></div></div>
+    <div id="p-rutas" class="pagina"><div class="seccion-base" style="text-align: center;"><h2 class="titulo-seccion">Dispatch</h2><a href="https://newsky.app/pilot/flights/add?step=2" target="_blank" style="background:var(--bronce-oro); color:var(--azul-olimpo); padding:15px 30px; text-decoration:none; font-weight:700; border-radius:5px; font-family:'Orbitron'">RESERVAR VUELO</a></div></div>
     <div id="p-pilotos" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Roster Oficial</h2><div class="tabla-contenedor"><table><thead><tr><th>VID</th><th>PILOTO</th><th>HORAS</th><th>ESTADO</th></tr></thead><tbody><tr><td>725181</td><td>Oliver Garrido</td><td>700h 49m</td><td>EN TIERRA</td></tr></tbody></table></div></div></div>
     <div id="p-staff" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Staff</h2><div class="card-staff"><h3>Oliver Garrido</h3><p>CEO & Fundador | VID: 725181</p><p>Guatemala <img src="https://flagcdn.com/w20/gt.png" style="width:20px; vertical-align:middle;"></p></div></div></div>
     
