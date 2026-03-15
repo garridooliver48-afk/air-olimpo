@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
         
-        /* --- NAVBAR ORIGINAL --- */
+        /* --- NAVBAR ORIGINAL (RECUPERADA E INTACTA) --- */
         .navbar { 
             background-color: var(--azul-olimpo); 
             padding: 12px 30px; 
@@ -68,43 +68,56 @@
         .btn-operaciones { background-color: transparent; color: var(--bronce-oro); padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; border: 1px solid var(--bronce-oro); }
         .relojes-container { background-color: rgba(0, 0, 0, 0.4); color: var(--bronce-oro); display: flex; padding: 8px 12px; border-radius: 4px; border: 1px solid var(--bronce-oro); font-family: 'Orbitron', sans-serif; font-size: 13px; }
 
-        /* --- HERO --- */
-        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        /* --- HERO ORIGINAL --- */
+        .hero { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; }
         .video-bg { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(45%); z-index: -1; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 50px; color: var(--bronce-oro); text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 55px; color: var(--bronce-oro); text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 
         /* --- SECCIONES --- */
         .pagina { display: none; }
         .pagina.activa { display: block; animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .seccion-base { padding: 40px 20px; max-width: 1100px; margin: auto; }
-        .titulo-seccion { text-align: center; font-family: 'Orbitron', sans-serif; color: var(--bronce-oro); margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
+        .seccion-base { padding: 60px 20px; max-width: 1100px; margin: auto; }
+        .titulo-seccion { text-align: center; font-family: 'Orbitron', sans-serif; color: var(--bronce-oro); margin-bottom: 40px; }
+
+        /* --- CARDS MÉTRICAS (RECUPERADAS, ABAJO DEL VIDEO) --- */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: rgba(0, 43, 94, 0.4); padding: 40px; border-radius: 15px; border-bottom: 4px solid var(--bronce-oro); text-align: center; }
+        .card i { font-size: 35px; color: var(--bronce-oro); margin-bottom: 15px; }
+        .card h3 { font-size: 30px; margin: 10px 0; color: white; }
+
+        /* --- FLOTA (CORREGIDA, IMÁGENES PEQUEÑAS) --- */
+        .grid-flota { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card-flota { background: rgba(0, 43, 94, 0.4); padding: 25px; border-radius: 15px; border-bottom: 4px solid var(--bronce-oro); text-align: center; }
+        .card-flota img { width: 100%; max-width: 200px; height: auto; border-radius: 10px; margin: 0 auto 15px; border: 1px solid var(--bronce-oro); display: block; }
+        .card-flota h3 { font-size: 22px; color: white; margin: 10px 0; }
+
+        /* --- STAFF (CORREGIDO, CUADRO ESTRECHO) --- */
+        .grid-staff { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; justify-content: flex-start; }
+        .card-staff { background: rgba(0, 43, 94, 0.4); padding: 20px; border-radius: 10px; border-left: 5px solid var(--bronce-oro); text-align: left; max-width: 320px; }
+        .card-staff h3 { margin: 0; color: var(--bronce-oro); font-family: 'Orbitron', sans-serif; font-size: 18px; }
+        
+        /* BANDERITA ARREGLADA */
+        .flag-mini { width: 20px; vertical-align: middle; margin-left: 10px; }
+
+        /* RUTAS */
+        .card-ruta { background: rgba(0, 43, 94, 0.4); padding: 30px; border-radius: 15px; border-bottom: 4px solid var(--bronce-oro); text-align: center; }
+        .btn-fsa { background: var(--bronce-oro); color: var(--azul-olimpo); padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 15px; }
 
         /* TABLA PILOTOS */
         .tabla-contenedor { width: 100%; overflow-x: auto; background: rgba(0, 43, 94, 0.2); border-radius: 10px; border: 1px solid rgba(197, 155, 39, 0.2); }
-        table { width: 100%; border-collapse: collapse; font-family: 'Poppins', sans-serif; color: white; }
+        table { width: 100%; border-collapse: collapse; color: white; }
         th { background: rgba(197, 155, 39, 0.1); color: var(--bronce-oro); font-family: 'Orbitron', sans-serif; padding: 15px; text-align: left; font-size: 12px; border-bottom: 2px solid var(--bronce-oro); }
-        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; }
-        .status-on { color: #00ff88; font-weight: bold; }
+        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        /* CARDS STAFF */
-        .grid-staff { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card-staff { background: rgba(0, 43, 94, 0.4); padding: 25px; border-radius: 10px; border-left: 5px solid var(--bronce-oro); border-right: 1px solid rgba(197, 155, 39, 0.2); }
-        .card-staff h3 { margin: 0; color: var(--bronce-oro); font-family: 'Orbitron', sans-serif; font-size: 18px; }
-        .card-staff p { margin: 5px 0 0; font-size: 13px; opacity: 0.9; }
-        .flag { width: 20px; vertical-align: middle; margin-left: 5px; }
-
-        /* WHATSAPP FLOAT */
-        .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); z-index: 2000; text-decoration: none; transition: 0.3s; }
-        .btn-whatsapp:hover { transform: scale(1.1); }
+        /* WHATSAPP */
+        .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 2000; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/50242203923" class="btn-whatsapp" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/50242203923" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <div class="navbar">
         <div class="navbar-izq">
@@ -129,12 +142,33 @@
 
     <div id="p-inicio" class="pagina activa">
         <div class="hero">
-            <video autoplay muted loop playsinline class="video-bg">
-                <source src="avion.mp4" type="video/mp4">
-            </video>
-            <div class="hero-content">
-                <h1>Excelencia en los <span>Cielos</span></h1>
-                <p>BIENVENIDO A AIR OLIMPO NEXTGEN</p>
+            <video autoplay muted loop playsinline class="video-bg"><source src="avion.mp4" type="video/mp4"></video>
+            <h1>Excelencia en los <span>Cielos</span></h1>
+        </div>
+        <div class="seccion-base">
+            <h2 class="titulo-seccion">Nuestras Operaciones</h2>
+            <div class="grid-cards">
+                <div class="card"><i class="fas fa-plane"></i><h3>1,250</h3><p>Vuelos Totales</p></div>
+                <div class="card"><i class="fas fa-clock"></i><h3>3,420</h3><p>Horas de Vuelo</p></div>
+                <div class="card"><i class="fas fa-users"></i><h3>85</h3><p>Pilotos en Red</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="p-flota" class="pagina">
+        <div class="seccion-base">
+            <h2 class="titulo-seccion">Unidades Disponibles</h2>
+            <div class="grid-flota">
+                <div class="card-flota">
+                    <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=400" alt="A320">
+                    <h3>Airbus A320-200</h3>
+                    <p>Comercial</p>
+                </div>
+                <div class="card-flota">
+                    <img src="https://images.unsplash.com/photo-1559160581-4471b4e12e2c?q=80&w=400" alt="R66">
+                    <h3>Robinson R66</h3>
+                    <p>VIP</p>
+                </div>
             </div>
         </div>
     </div>
@@ -146,10 +180,10 @@
                 <div class="card-staff">
                     <h3>Oliver Garrido</h3>
                     <p>CEO & Fundador | VID: 725181</p>
-                    <p>País: Guatemala <img src="https://flagcdn.com/w20/gt.png" class="flag"></p>
+                    <p>Guatemala <img src="https://flagcdn.com/w20/gt.png" class="flag-mini"></p>
                 </div>
                 <div class="card-staff" style="opacity: 0.6;">
-                    <h3>Director de Operaciones</h3>
+                    <h3>Director OPS</h3>
                     <p>Posición Vacante</p>
                 </div>
             </div>
@@ -162,33 +196,31 @@
             <div class="tabla-contenedor">
                 <table>
                     <thead>
-                        <tr>
-                            <th>VID PILOTO</th>
-                            <th>NOMBRE</th>
-                            <th>RANGO</th>
-                            <th>HORAS</th>
-                            <th>ÚLTIMO VUELO</th>
-                            <th>ESTADO</th>
-                        </tr>
+                        <tr><th>VID</th><th>NOMBRE</th><th>HORAS</th><th>ÚLTIMO VUELO</th><th>ESTADO</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>725181</td>
-                            <td>Oliver Garrido</td>
-                            <td>Comandante CEO</td>
-                            <td>700h 49m</td>
-                            <td>MGGT - KMIA</td>
-                            <td class="status-on">EN TIERRA</td>
-                        </tr>
+                        <tr><td>725181</td><td>Oliver Garrido</td><td>700h 49m</td><td>MGGT - KMIA</td><td>EN TIERRA</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <div id="p-flota" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Flota de Air Olimpo</h2></div></div>
-    <div id="p-rutas" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Rutas Activas</h2></div></div>
-    <div id="p-mapa" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Radar Táctico</h2></div></div>
+    <div id="p-rutas" class="pagina">
+        <div class="seccion-base">
+            <h2 class="titulo-seccion">Plan de Vuelo</h2>
+            <div class="grid-cards">
+                <div class="card-ruta">
+                    <strong style="color:var(--bronce-oro)">OLM-001</strong>
+                    <h3>MGGT ➔ KMIA</h3>
+                    <p>A320-200</p>
+                    <a href="https://www.fsairlines.net/crewcenter/index.php?status=bookings" target="_blank" class="btn-fsa">ARMAR VUELO EN FSA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="p-mapa" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Radar</h2><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15444.6!2d-90.529!3d14.583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sgt!4v1700000000000" style="width:100%; height:500px; border:1px solid var(--bronce-oro); border-radius:15px; filter: invert(90%) hue-rotate(180deg);"></iframe></div></div>
 
     <script>
         function cambiarPagina(idPagina, enlace) {
