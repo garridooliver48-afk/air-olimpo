@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
         
-        /* --- NAVBAR AZUL PROFUNDO --- */
+        /* --- NAVBAR COMPLETA (AZUL Y ORO) --- */
         .navbar { 
             background-color: var(--azul-olimpo); 
             padding: 12px 30px; 
@@ -41,15 +41,8 @@
         }
 
         .navbar-izq { display: flex; align-items: center; gap: 20px; }
+        .navbar-logo { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; color: var(--bronce-oro); }
 
-        .navbar-logo { 
-            font-family: 'Cinzel', serif; 
-            font-size: 26px; 
-            font-weight: 700; 
-            color: var(--bronce-oro); 
-        }
-
-        /* MENÚ CON TODAS LAS OPCIONES REGRESADAS */
         .nav-links { display: flex; gap: 10px; }
         .nav-links a {
             text-decoration: none;
@@ -70,77 +63,20 @@
             border-color: var(--bronce-oro);
         }
 
-        /* PANEL DERECHO REGRESADO (PORTAL, OPS, RELOJES) */
         .navbar-der { display: flex; align-items: center; gap: 15px; }
+        .btn-portal { text-decoration: none; color: var(--texto-claro); font-weight: 700; font-size: 12px; text-transform: uppercase; display: flex; align-items: center; gap: 5px; }
+        .btn-operaciones { background-color: transparent; color: var(--bronce-oro); padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; border: 1px solid var(--bronce-oro); }
+        .relojes-container { background-color: rgba(0, 0, 0, 0.4); color: var(--bronce-oro); display: flex; padding: 8px 12px; border-radius: 4px; border: 1px solid var(--bronce-oro); font-family: 'Orbitron', sans-serif; font-size: 13px; }
 
-        .btn-portal {
-            text-decoration: none;
-            color: var(--texto-claro);
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+        /* --- HERO --- */
+        .hero { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .video-bg { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(45%); z-index: -1; }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 55px; color: var(--bronce-oro); text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 
-        .btn-operaciones {
-            background-color: transparent;
-            color: var(--bronce-oro);
-            padding: 10px 18px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 11px;
-            text-transform: uppercase;
-            border: 1px solid var(--bronce-oro);
-        }
-        .btn-operaciones:hover {
-            background-color: var(--bronce-oro);
-            color: var(--azul-olimpo);
-        }
-
-        .relojes-container {
-            background-color: rgba(0, 0, 0, 0.4);
-            color: var(--bronce-oro);
-            display: flex;
-            padding: 8px 12px;
-            border-radius: 4px;
-            border: 1px solid var(--bronce-oro);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 13px;
-        }
-
-        /* --- HERO CON VIDEO --- */
-        .hero { 
-            position: relative;
-            height: 70vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            text-align: center;
-        }
-        .video-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            filter: brightness(45%); 
-            z-index: -1;
-        }
-        .hero h1 { 
-            font-family: 'Cinzel', serif; 
-            font-size: 55px; 
-            color: var(--bronce-oro); 
-            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
-
-        /* --- SECCIONES ABAJO --- */
+        /* --- SECCIONES (AGREGADO CONTENIDO) --- */
         .pagina { display: none; }
-        .pagina.activa { display: block; }
+        .pagina.activa { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .seccion-base { padding: 60px 20px; max-width: 1200px; margin: auto; }
         .titulo-seccion { text-align: center; font-family: 'Orbitron', sans-serif; color: var(--bronce-oro); margin-bottom: 40px; }
@@ -150,11 +86,18 @@
             background: rgba(0, 43, 94, 0.4); 
             padding: 40px; 
             border-radius: 15px; 
+            border: 1px solid rgba(197, 155, 39, 0.1);
             border-bottom: 4px solid var(--bronce-oro); 
             text-align: center; 
         }
         .card i { font-size: 35px; color: var(--bronce-oro); margin-bottom: 15px; }
         .card h3 { font-size: 30px; margin: 10px 0; color: white; }
+        .card img { width: 100%; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--bronce-oro); }
+        
+        .btn-accion { background: var(--bronce-oro); color: var(--azul-olimpo); padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 15px; }
+
+        /* RADAR MAPA */
+        .mapa-radar { width: 100%; height: 500px; border-radius: 15px; border: 1px solid var(--bronce-oro); filter: invert(90%) hue-rotate(180deg) brightness(0.8); }
     </style>
 </head>
 <body>
@@ -198,6 +141,51 @@
                 <div class="card"><i class="fas fa-clock"></i><h3>3,420</h3><p>Horas de Vuelo</p></div>
                 <div class="card"><i class="fas fa-users"></i><h3>85</h3><p>Pilotos en Red</p></div>
             </div>
+        </div>
+    </div>
+
+    <div id="p-flota" class="pagina">
+        <div class="seccion-base">
+            <h2 class="titulo-seccion">Unidades Disponibles</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=600" alt="A320">
+                    <h3>Airbus A320-200</h3>
+                    <p>Comercial | Largo Alcance</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1559160581-4471b4e12e2c?q=80&w=600" alt="R66">
+                    <h3>Robinson R66</h3>
+                    <p>VIP | Operaciones Especiales</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="p-rutas" class="pagina">
+        <div class="seccion-base">
+            <h2 class="titulo-seccion">Plan de Vuelo</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <strong style="color:var(--bronce-oro)">OLM-001</strong>
+                    <h3>MGGT ➔ KMIA</h3>
+                    <p>Miami Int. | Disponible</p>
+                    <a href="#" class="btn-accion">Volar Ahora</a>
+                </div>
+                <div class="card">
+                    <strong style="color:var(--bronce-oro)">OLM-002</strong>
+                    <h3>MGGT ➔ MMUN</h3>
+                    <p>Cancún Int. | Disponible</p>
+                    <a href="#" class="btn-accion">Volar Ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="p-mapa" class="pagina">
+        <div class="seccion-base">
+            <h2 class="titulo-seccion">Radar Táctico en Vivo</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15444.6!2d-90.529!3d14.583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sgt!4v1700000000000" class="mapa-radar"></iframe>
         </div>
     </div>
 
