@@ -74,7 +74,7 @@
         .seccion-base { padding: 60px 20px; max-width: 1100px; margin: auto; }
         .titulo-seccion { text-align: center; font-family: 'Orbitron', sans-serif; color: var(--bronce-oro); margin-bottom: 40px; }
 
-        /* --- INICIO (SCROLL COMPLETO) --- */
+        /* --- INICIO (CON VIDEO RESTAURADO) --- */
         .hero { position: relative; height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; }
         .video-bg { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(40%); z-index: -1; }
         .hero h1 { font-family: 'Cinzel', serif; font-size: 55px; color: var(--bronce-oro); text-shadow: 0 5px 15px rgba(0,0,0,0.5); margin: 0; }
@@ -87,14 +87,13 @@
         .stat-card h2 { font-size: 35px; color: #222; margin: 0; }
         .stat-card p { font-size: 11px; color: #666; text-transform: uppercase; margin-top: 5px; font-weight: 700; }
 
-        /* VUELOS LIVE */
         .flex-vuelos { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; max-width: 1200px; margin: 40px auto; text-align: left; }
         .vuelos-lista { flex: 2; min-width: 300px; }
         .vuelos-recientes { flex: 1; min-width: 250px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .card-vuelo-live { background: white; margin-bottom: 15px; padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--azul-olimpo); color: #333; }
         .status-badge { background: #25d366; color: white; padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; }
 
-        /* DESTINOS CON NOMBRES EXACTOS SEGÚN GITHUB */
+        /* DESTINOS - CORREGIDOS CON ENCODING PARA GITHUB */
         .grid-destinos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
         .destino-card { position: relative; height: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .destino-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
@@ -107,7 +106,7 @@
         .partners-flex a img { height: 40px; filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
         .partners-flex a img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
-        /* --- ESTILOS BASE INTACTOS --- */
+        /* --- ESTILOS BASE RESTAURADOS --- */
         .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .card { background: rgba(0, 43, 94, 0.4); padding: 30px; border-radius: 15px; border-bottom: 4px solid var(--bronce-oro); text-align: center; }
         .card img { width: 100%; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--bronce-oro); }
@@ -154,7 +153,6 @@
                 <div class="stat-card"><h2>3,750</h2><p>Horas Voladas</p></div>
                 <div class="stat-card"><h2>900k</h2><p>Millas Totales</p></div>
             </div>
-
             <div class="flex-vuelos">
                 <div class="vuelos-lista">
                     <h3 style="margin-bottom:20px; color: var(--azul-olimpo);">Vuelos en Curso</h3>
@@ -163,11 +161,6 @@
                         <div class="status-badge">AIRBORNE</div>
                         <div>MGGT ➔ MMUN</div>
                     </div>
-                </div>
-                <div class="vuelos-recientes">
-                    <h3 style="margin-bottom:15px; color: var(--azul-olimpo);">Vuelos Recientes</h3>
-                    <div style="font-size:12px; border-bottom:1px solid #eee; padding:5px 0; color: #333;">AEC26 - Arribó</div>
-                    <div style="font-size:12px; border-bottom:1px solid #eee; padding:5px 0; color: #333;">AEC645 - Arribó</div>
                 </div>
             </div>
         </section>
@@ -180,10 +173,22 @@
         <section class="seccion-blanca">
             <h2 style="color:var(--azul-olimpo); margin-bottom:40px; font-family:'Orbitron'">Destinos Principales</h2>
             <div class="grid-destinos">
-                <div class="destino-card"><img src="Cancún.jpg" alt="Cancún"><div class="destino-info"><strong>Cancún</strong><br>MMUN</div></div>
-                <div class="destino-card"><img src="Nueva York.jpg" alt="New York"><div class="destino-info"><strong>New York</strong><br>KJFK</div></div>
-                <div class="destino-card"><img src="costa rica.jpg" alt="Costa Rica"><div class="destino-info"><strong>Costa Rica</strong><br>MROC</div></div>
-                <div class="destino-card"><img src="madrid.jpg" alt="Madrid"><div class="destino-info"><strong>Madrid</strong><br>LEMD</div></div>
+                <div class="destino-card">
+                    <img src="Canc%C3%BAn.jpg" alt="Cancún">
+                    <div class="destino-info"><strong>Cancún</strong><br>MMUN</div>
+                </div>
+                <div class="destino-card">
+                    <img src="Nueva%20York.jpg" alt="New York">
+                    <div class="destino-info"><strong>New York</strong><br>KJFK</div>
+                </div>
+                <div class="destino-card">
+                    <img src="costa rica.jpg" alt="Costa Rica">
+                    <div class="destino-info"><strong>Costa Rica</strong><br>MROC</div>
+                </div>
+                <div class="destino-card">
+                    <img src="madrid.jpg" alt="Madrid">
+                    <div class="destino-info"><strong>Madrid</strong><br>LEMD</div>
+                </div>
             </div>
         </section>
 
@@ -193,7 +198,6 @@
                 <a href="https://vatsim.net/" target="_blank"><img src="vatsim.png" alt="VATSIM"></a>
                 <a href="https://dispatch.simbrief.com/home" target="_blank"><img src="simbrief.png" alt="SimBrief"></a>
             </div>
-            <p style="font-size:11px; color:#aaa;">© 2026 Air Olimpo Virtual Airline. Todos los derechos reservados.</p>
         </footer>
     </div>
 
