@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Olimpo | NextGen</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --azul-olimpo: #002b5e;    
+            --bronce-oro: #c59b27;  
+            --fondo-oscuro: #0a1128;
+            --texto-claro: #ffffff;
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--fondo-oscuro); 
+            color: var(--texto-claro);
+            overflow-x: hidden;
+        }
+        
+        /* --- NAVBAR COMPLETA (AZUL Y ORO) --- */
+        .navbar { 
+            background-color: var(--azul-olimpo); 
+            padding: 12px 30px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5); 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--bronce-oro); 
+        }
+
+        .navbar-izq { display: flex; align-items: center; gap: 20px; }
+
+        .navbar-logo { 
+            font-family: 'Cinzel', serif; 
+            font-size: 26px; 
+            font-weight: 700; 
+            color: var(--bronce-oro); 
+        }
+
+        /* MENÚ CON TODAS LAS OPCIONES (PILOTOS Y STAFF INCLUIDOS) */
+        .nav-links { display: flex; gap: 10px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texto-claro);
+            background-color: rgba(255, 255, 255, 0.05); 
+            padding: 8px 16px; 
+            border-radius: 25px; 
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-links a:hover, .nav-links a.activo { 
+            background-color: var(--bronce-oro); 
+            color: var(--azul-olimpo); 
+            border-color: var(--bronce-oro);
+        }
+
+        /* PANEL DERECHO COMPLETO (PORTAL, OPS, RELOJES) */
+        .navbar-der { display: flex; align-items: center; gap: 15px; }
+
+        .btn-portal {
+            text-decoration: none;
+            color: var(--texto-claro);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-operaciones {
+            background-color: transparent;
+            color: var(--bronce-oro);
+            padding: 10px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            border: 1px solid var(--bronce-oro);
+        }
+        .btn-operaciones:hover {
+            background-color: var(--bronce-oro);
+            color: var(--azul-olimpo);
+        }
+
+        .relojes-container {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: var(--bronce-oro);
+            display: flex;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--bronce-oro);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+        }
+
+        /* --- HERO CON TU VIDEO --- */
+        .hero { 
+            position: relative;
+            height: 70vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-align: center;
+        }
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(45%); 
+            z-index: -1;
+        }
+        .hero h1 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 55px; 
+            color: var(--bronce-oro); 
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        /* --- SECCIONES ABAJO --- */
+        .pagina { display: none; }
+        .pagina.activa { display: block; }
+
+        .seccion-base { padding: 60px 20px; max-width: 1200px; margin: auto; }
+        .titulo-seccion { 
+            text-align: center; 
+            font-family: 'Orbitron', sans-serif; 
+            color: var(--bronce-oro); 
+            margin-bottom: 40px; 
+        }
+
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { 
+            background: rgba(0, 43, 94, 0.4); 
+            padding: 40px; 
+            border-radius: 15px; 
+            border-bottom: 4px solid var(--bronce-oro); 
+            text-align: center; 
+        }
+        .card i { font-size: 35px; color: var(--bronce-oro); margin-bottom: 15px; }
+        .card h3 { font-size: 30px; margin: 10px 0; color: white; }
+        .card p { color: rgba(255,255,255,0.7); text-transform: uppercase; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-izq">
+            <div class="navbar-logo">AIR OLIMPO</div>
+            <div class="nav-links">
+                <a onclick="cambiarPagina('p-inicio', this)" class="activo">Inicio</a>
+                <a onclick="cambiarPagina('p-flota', this)">Flota</a>
+                <a onclick="cambiarPagina('p-rutas', this)">Rutas</a>
+                <a onclick="cambiarPagina('p-mapa', this)">Mapa</a>
+                <a>Pilotos</a>
+                <a>Staff</a>
+            </div>
+        </div>
+
+        <div class="navbar-der">
+            <a href="#" class="btn-portal">Portal <i class="fas fa-sign-in-alt"></i></a>
+            <a href="#" class="btn-operaciones">Centro de Operaciones</a>
+            <div class="relojes-container">
+                <span id="reloj-zulu">00:00</span> ZULU | <span id="reloj-local">00:00</span> LCL
+            </div>
+        </div>
+    </div>
+
+    <div id="p-inicio" class="pagina activa">
+        <div class="hero">
+            <video autoplay muted loop playsinline class="video-bg">
+                <source src="avion.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <h1>Excelencia en los <span>Cielos</span></h1>
+                <p>Aviación virtual de alto prestigio.</p>
+            </div>
+        </div>
+        <div class="seccion-base">
+            <h2 class="titulo-seccion">Nuestras Operaciones</h2>
+            <div class="grid-cards">
+                <div class="card"><i class="fas fa-plane"></i><h3>1,250</h3><p>Vuelos Totales</p></div>
+                <div class="card"><i class="fas fa-clock"></i><h3>3,420</h3><p>Horas de Vuelo</p></div>
+                <div class="card"><i class="fas fa-users"></i><h3>85</h3><p>Pilotos en Red</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function cambiarPagina(idPagina, enlace) {
+            document.querySelectorAll('.pagina').forEach(p => p.classList.remove('activa'));
+            document.getElementById(idPagina).classList.add('activa');
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('activo'));
+            if(enlace) enlace.classList.add('activo');
+        }
+        function actualizarRelojes() {
+            const ahora = new Date();
+            const zulu = String(ahora.getUTCHours()).padStart(2, '0') + ':' + String(ahora.getUTCMinutes()).padStart(2, '0');
+            const local = String(ahora.getHours()).padStart(2, '0') + ':' + String(ahora.getUTCMinutes()).padStart(2, '0');
+            document.getElementById('reloj-zulu').textContent = zulu;
+            document.getElementById('reloj-local').textContent = local;
+        }
+        setInterval(actualizarRelojes, 1000); actualizarRelojes();
+    </script>
+</body>
+</html>
