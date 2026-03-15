@@ -86,17 +86,15 @@
         .stat-card h2 { font-size: 35px; color: #222; margin: 0; }
         .stat-card p { font-size: 11px; color: #666; text-transform: uppercase; margin-top: 5px; font-weight: 700; }
 
-        .grid-destinos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
-        .destino-card { position: relative; height: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .grid-destinos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; }
+        .destino-card { position: relative; height: 350px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .destino-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .destino-card:hover img { transform: scale(1.1); }
         .destino-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); text-align: left; color: white; }
 
-        /* FOOTER */
         .footer-olimpo { background: #f8f9fa; padding: 60px 20px; color: #333; text-align: center; border-top: 1px solid #ddd; }
         .partners-flex { display: flex; justify-content: center; gap: 50px; align-items: center; flex-wrap: wrap; margin-bottom: 40px; }
         .partners-flex a img { height: 40px; filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
-        .partners-flex a img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+        .partners-flex a img:hover { filter: grayscale(0%); opacity: 1; }
 
         /* --- ESTILOS BASE --- */
         .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
@@ -155,8 +153,6 @@
         <section class="seccion-blanca">
             <h2 style="color:var(--azul-olimpo); margin-bottom:40px; font-family:'Orbitron'">Destinos Principales</h2>
             <div class="grid-destinos">
-                <div class="destino-card"><img src="can.jpg" alt="Cancun"><div class="destino-info"><strong>Cancún</strong><br>MMUN</div></div>
-                <div class="destino-card"><img src="newyork.jpg" alt="New York"><div class="destino-info"><strong>New York</strong><br>KJFK</div></div>
                 <div class="destino-card"><img src="costarica.jpg" alt="Costa Rica"><div class="destino-info"><strong>Costa Rica</strong><br>MROC</div></div>
                 <div class="destino-card"><img src="madrid.jpg" alt="Madrid"><div class="destino-info"><strong>Madrid</strong><br>LEMD</div></div>
             </div>
@@ -171,8 +167,8 @@
         </footer>
     </div>
 
-    <div id="p-flota" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Nuestra Flota</h2><div class="grid-cards"><div class="card"><img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=400"><h3>A320-200</h3></div><div class="card"><img src="https://images.unsplash.com/photo-1559160581-4471b4e12e2c?q=80&w=400"><h3>R66</h3></div></div></div></div>
-    <div id="p-rutas" class="pagina"><div class="seccion-base" style="text-align: center;"><h2 class="titulo-seccion">Rutas</h2><a href="https://newsky.app/pilot/flights/add?step=2" target="_blank" style="background:var(--bronce-oro); color:var(--azul-olimpo); padding:15px 30px; text-decoration:none; font-weight:700; border-radius:5px; font-family:'Orbitron'">RESERVAR VUELO</a></div></div>
+    <div id="p-flota" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Nuestra Flota</h2><div class="grid-cards"><div class="card"><img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=400"><h3>Airbus A320-200</h3></div><div class="card"><img src="https://images.unsplash.com/photo-1559160581-4471b4e12e2c?q=80&w=400"><h3>Robinson R66</h3></div></div></div></div>
+    <div id="p-rutas" class="pagina"><div class="seccion-base" style="text-align: center;"><h2 class="titulo-seccion">Dispatch</h2><a href="https://newsky.app/pilot/flights/add?step=2" target="_blank" style="background:var(--bronce-oro); color:var(--azul-olimpo); padding:15px 30px; text-decoration:none; font-weight:700; border-radius:5px; font-family:'Orbitron'">RESERVAR VUELO</a></div></div>
     <div id="p-pilotos" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Pilotos</h2><div class="tabla-contenedor"><table><thead><tr><th>VID</th><th>PILOTO</th><th>HORAS</th></tr></thead><tbody><tr><td>725181</td><td>Oliver Garrido</td><td>700h</td></tr></tbody></table></div></div></div>
     <div id="p-staff" class="pagina"><div class="seccion-base"><h2 class="titulo-seccion">Staff</h2><div class="card-staff"><h3>Oliver Garrido</h3><p>CEO | VID: 725181</p></div></div></div>
     <div id="p-mapa" class="pagina"><div class="seccion-base"><iframe src="https://newsky.app/map?search=AOL" style="width:100%; height:600px; border:1px solid var(--bronce-oro); border-radius:15px;"></iframe></div></div>
