@@ -43,7 +43,7 @@
 
         .navbar-logo { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; color: var(--bronce-oro); }
 
-        .nav-links { display: flex; gap: 10px; }
+        .nav-links { display: flex; gap: 10px; align-items: center; }
         .nav-links a {
             text-decoration: none;
             color: var(--texto-claro);
@@ -63,9 +63,21 @@
             border-color: var(--bronce-oro);
         }
 
-        .navbar-der { display: flex; align-items: center; gap: 15px; }
-        .btn-operaciones { background-color: transparent; color: var(--bronce-oro); padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; border: 1px solid var(--bronce-oro); }
-        .relojes-container { background-color: rgba(0, 0, 0, 0.4); color: var(--bronce-oro); display: flex; padding: 8px 12px; border-radius: 4px; border: 1px solid var(--bronce-oro); font-family: 'Orbitron', sans-serif; font-size: 13px; }
+        .navbar-der { display: flex; align-items: center; gap: 10px; }
+        
+        /* BURBUJAS DE RELOJ RELLENAS */
+        .reloj-burbuja {
+            background-color: var(--bronce-oro);
+            color: var(--azul-olimpo);
+            padding: 8px 14px;
+            border-radius: 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid var(--bronce-oro);
+            min-width: 80px;
+            text-align: center;
+        }
 
         /* --- ESTRUCTURA --- */
         .pagina { display: none; }
@@ -73,10 +85,19 @@
         .seccion-base { padding: 60px 20px; max-width: 1100px; margin: auto; }
         .titulo-seccion { text-align: center; font-family: 'Orbitron', sans-serif; color: var(--bronce-oro); margin-bottom: 40px; }
 
-        /* --- INICIO --- */
-        .hero { position: relative; height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        /* --- INICIO (TEXTO ABAJO) --- */
+        .hero { 
+            position: relative; 
+            height: 75vh; 
+            display: flex; 
+            align-items: flex-end; 
+            justify-content: center; 
+            text-align: center; 
+            overflow: hidden;
+            padding-bottom: 80px; 
+        }
         .video-bg { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(40%); z-index: -1; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 55px; color: var(--bronce-oro); text-shadow: 0 5px 15px rgba(0,0,0,0.5); margin: 0; }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 55px; color: var(--bronce-oro); text-shadow: 0 5px 15px rgba(0,0,0,0.5); margin: 0; z-index: 10; }
         
         .seccion-blanca { background: #f8f9fa; color: #333; padding: 80px 20px; text-align: center; }
         .seccion-oscura { background: var(--fondo-oscuro); color: white; padding: 80px 20px; text-align: center; }
@@ -107,6 +128,36 @@
         td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
         .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 2000; text-decoration: none; }
+
+        /* --- DROPDOWN "MÁS" --- */
+        .dropdown { position: relative; display: inline-block; padding-bottom: 20px; margin-bottom: -20px; }
+        .dropdown .dropbtn {
+            color: #ff9900; 
+            background-color: rgba(255, 255, 255, 0.05); 
+            padding: 8px 16px; 
+            border-radius: 25px; 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center; gap: 5px; font-weight: bold; transition: 0.3s;
+        }
+        .dropdown:hover .dropbtn { background-color: var(--bronce-oro); color: var(--azul-olimpo); border-color: var(--bronce-oro); }
+        .dropdown-content { display: none; position: absolute; background-color: #f8f9fa; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3); z-index: 2000; border-radius: 8px; top: 100%; left: 0; padding: 5px 0; margin-top: -10px; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-submenu { position: relative; }
+        .dropdown-submenu-btn { color: #ff6600; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; }
+        .dropdown-submenu-btn:hover { background-color: #e9ecef; }
+        .dropdown-submenu-content { display: none; position: absolute; left: 100%; top: 0; background-color: #f8f9fa; min-width: 170px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3); z-index: 2000; border-radius: 8px; margin-left: 2px; padding: 5px 0; }
+        .dropdown-submenu:hover .dropdown-submenu-content { display: block; }
+        .dropdown-submenu-content a { color: #1c355e !important; padding: 10px 20px !important; text-decoration: none !important; display: block !important; font-family: 'Poppins', sans-serif !important; font-size: 13px !important; font-weight: 500 !important; background-color: transparent !important; border: none !important; text-transform: none !important; }
+        .dropdown-submenu-content a:hover { background-color: #e9ecef !important; color: var(--bronce-oro) !important; }
+
+        /* --- MEJORA DE VIDEO --- */
+        .video-bg { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: brightness(45%) contrast(110%) saturate(105%) !important; }
+        .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(#000000 0.5px, transparent 0.5px); background-size: 3px 3px; opacity: 0.15; z-index: 1; pointer-events: none; }
     </style>
 </head>
 <body>
@@ -122,10 +173,28 @@
             <a onclick="cambiarPagina('p-mapa', this)">Mapa</a>
             <a onclick="cambiarPagina('p-pilotos', this)">Pilotos</a>
             <a onclick="cambiarPagina('p-staff', this)">Staff</a>
+            
+            <div class="dropdown">
+                <span class="dropbtn">MÁS <i class="fas fa-chevron-down"></i></span>
+                <div class="dropdown-content">
+                    <div class="dropdown-submenu">
+                        <span class="dropdown-submenu-btn">Recursos <i class="fas fa-chevron-right"></i></span>
+                        <div class="dropdown-submenu-content">
+                            <a href="https://newsky.app/home" target="_blank" style="color: #002b5e !important; font-weight: 700 !important;">Centro de Operaciones</a>
+                            <a href="https://www.simbrief.com/home/" target="_blank">Simbrief</a>
+                            <a href="https://skyvector.com/" target="_blank">Skyvector</a>
+                            <a href="https://www.windy.com/?14.634,-90.515,5" target="_blank">Windy</a>
+                            <a href="https://metar-taf.com/es?c=157725.-902336.6&hl=MGGT" target="_blank">METAR-TAF</a>
+                            <a href="https://chartfox.org/MGGT#ebe079ff-2fbf-4a48-b449-3dbd605d2ce3" target="_blank">ChartFox (MGGT)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        
         <div class="navbar-der">
-            <a href="https://newsky.app/home" target="_blank" class="btn-operaciones">Centro de Operaciones</a>
-            <div class="relojes-container"><span id="rz">00:00</span> Z | <span id="rl">00:00</span> L</div>
+            <div class="reloj-burbuja"><span id="rz">00:00</span> Z</div>
+            <div class="reloj-burbuja"><span id="rl">00:00</span> L</div>
         </div>
     </div>
 
@@ -138,10 +207,10 @@
         <section class="seccion-blanca">
             <h2 style="color:var(--azul-olimpo); font-family:'Orbitron'">Nuestras Operaciones</h2>
             <div class="grid-stats">
-                <div class="stat-card"><h2>420</h2><p>Vuelos Totales</p></div>
+                <div class="stat-card"><h2>671.4K</h2><p>Millas Totales</p></div>
                 <div class="stat-card"><h2>28</h2><p>Pilotos Activos</p></div>
                 <div class="stat-card"><h2>3,750</h2><p>Horas Voladas</p></div>
-                <div class="stat-card"><h2>900k</h2><p>Millas Totales</p></div>
+                <div class="stat-card"><h2>AOL</h2><p>Indicativo Oficial</p></div>
             </div>
         </section>
 
